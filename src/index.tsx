@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeConfig } from './config/theme.config';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  //TODO: El themeConfig es para configurar las ocnfiguraciones de tema de toda nuestra app definidas en el theme.config.tsx
   <React.StrictMode>
-    <App />
+    <ThemeConfig>
+      <App />
+    </ThemeConfig>
   </React.StrictMode>
 );
 

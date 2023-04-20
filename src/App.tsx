@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter } from "react-router-dom"
+import { AppRouter } from './Router';
+import { NotificationProvider } from './context/notification.context';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NotificationProvider>
+      {/* usamos el BrowserRouter y dentro definimos nuestro router para poder
+      redireccionar entre componentes */}
+      <BrowserRouter>
+        {/* El AppRouter lo definimos como archivo Router.tsx que maneja las rutas de nuestra app */}
+        <AppRouter />
+      </BrowserRouter>
+    </NotificationProvider>
   );
 }
 
