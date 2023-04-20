@@ -19,6 +19,7 @@ export const AppRouter:React.FC<{}> = ()=>{
         {/*si lo hacemos de esta manera estamos excluyendo la ruta del Layout por lo tanto no tendra ningun otro elemento
             superpuesto encima de el */}
         <Route path="/login" element={<LoginPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     );
 }

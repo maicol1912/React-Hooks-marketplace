@@ -17,7 +17,7 @@ type CardProps = {
 }
 export const CardComponent: React.FC<CardProps>= ({image,name,species,status}) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345}}>
       <CardMedia
         component="img"
         height="194"
@@ -25,7 +25,7 @@ export const CardComponent: React.FC<CardProps>= ({image,name,species,status}) =
         alt="paella"
       />
       <CardContent>
-        <Typography sx={{ mb: 1.5 }} variant="h4">
+        <Typography sx={{ mb: 1.5 }} variant="h6">
           {name}
         </Typography>
         <Divider />
