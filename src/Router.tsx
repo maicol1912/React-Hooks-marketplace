@@ -3,6 +3,7 @@ import { Routes,Route } from "react-router-dom";
 import { HomePage } from "./pages/home";
 import { LoginPage } from "./pages/login";
 import { RouterLayout } from "./common/RouterLayout";
+import { HeaderComponent } from "./components";
 
 //El react.FC se usa para definir que eso es un componente de react para podr ser usado desde otros lugares
 export const AppRouter:React.FC<{}> = ()=>{
