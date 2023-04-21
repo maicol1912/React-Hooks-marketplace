@@ -8,14 +8,18 @@ import {
   Button,
   Divider,
 } from '@mui/material';
-
+import { useNavigate } from 'react-router-dom';
+//TODO: definimos las propiedades que tiene el componnete, las que va a recibir 
 type CardProps = {
     image:string;
     name:string;
     species:string;
     status:string;
+    id:number;
 }
-export const CardComponent: React.FC<CardProps>= ({image,name,species,status}) => {
+//TODO: le colocamos de que tipo de Type sera el componente y los atributos que llegan
+export const CardComponent: React.FC<CardProps>= ({image,name,species,status,id}) => {
+  let navigate = useNavigate()
   return (
     <Card sx={{ maxWidth: 345}}>
       <CardMedia
@@ -33,7 +37,7 @@ export const CardComponent: React.FC<CardProps>= ({image,name,species,status}) =
         <Typography sx={{ mt: 1.5 }}>Status:{status}</Typography>
       </CardContent>
       <CardActions>
-        <Button fullWidth variant="contained" size="small">
+        <Button fullWidth variant="contained" size="small" onClick={()=>navigate(`/character/${id}`)}>
           Learn more
         </Button>
       </CardActions>

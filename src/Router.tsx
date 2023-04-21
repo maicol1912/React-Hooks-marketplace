@@ -4,6 +4,7 @@ import { HomePage } from "./pages/home";
 import { LoginPage } from "./pages/login";
 import { RouterLayout } from "./common/RouterLayout";
 import { HeaderComponent } from "./components";
+import { CharacterPage } from "./pages/character";
 
 //El react.FC se usa para definir que eso es un componente de react para podr ser usado desde otros lugares
 export const AppRouter:React.FC<{}> = ()=>{
@@ -14,6 +15,7 @@ export const AppRouter:React.FC<{}> = ()=>{
             El layout va a poner siempre el navBar arriba y el demas componente abajo como definimos en el rputerLayout*/}
         <Route path="/" element={<RouterLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/character/:id" element={<CharacterPage />} />
         </Route>
 
         {/*si lo hacemos de esta manera estamos excluyendo la ruta del Layout por lo tanto no tendra ningun otro elemento

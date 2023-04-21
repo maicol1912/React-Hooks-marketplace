@@ -16,7 +16,7 @@ export const HeaderComponent: React.FC<HeaderProps> = ({
 }) => {
   return (
     <div>
-      <Box sx={{ width: '100%', height: '350px' }}>
+      <Box sx={{ width: '100%', height: '30%' }}>
         <Grid
           container
           direction="row"
@@ -32,8 +32,8 @@ export const HeaderComponent: React.FC<HeaderProps> = ({
               alignItems="center"
               sx={{ height: '100%' }}
             >
-              <Grid item>
-                <Typography variant="h1">{title}</Typography>
+              <Grid item sx={{ml:"4em"}}>
+                <Typography variant="h1" sx={{fontSize:"600%"}}>{title}</Typography>
               </Grid>
               <Grid item sx={{ mt: 2 }}>
                 <Typography>{description}</Typography>
