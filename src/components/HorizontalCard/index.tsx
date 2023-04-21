@@ -26,11 +26,9 @@ export const HorizontalCardComponent: React.FC<CardHorizntalComponentProps> = ({
   name,
   info,
 }) => {
-  //TODO: se instancia un tipo dispatch
   const dispatch = useAppDispatch();
 
   const handleRemoveToCart = () => {
-    //TODO: ejecutamos el dispatch de removeCart y le enviamos el id que debe recibir
     dispatch(removeToCart({id}));
   };
   return (

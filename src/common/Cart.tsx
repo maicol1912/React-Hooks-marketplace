@@ -20,7 +20,6 @@ export const CartComponent: React.FC<CartComponentProps> = ({
   open,
   handleStateViewDrawer,
 }) => {
-  //TODO: obtenemos la lista de items del reducer
   const items = useAppSelector((state) => state.cartReducer);
 
   return (
@@ -37,7 +36,6 @@ export const CartComponent: React.FC<CartComponentProps> = ({
           </IconButton>
         </Stack>
         <Divider sx={{ my: 1.5 }} />
-        {/*si el tamaño de la lista es mayor a 0 entonces despliega los contenidos de lo contario no*/}
         {items.length > 0
           ? items.map(({ id, image, name, info }) => (
               <HorizontalCardComponent

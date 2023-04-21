@@ -1,15 +1,12 @@
 import React from 'react';
 import { Box, Grid, Typography, Divider } from '@mui/material';
 
-//Todo creamos un tipo de este header osea que es lo que recibe
 type HeaderProps = {
   title: string;
   description: string;
-  //Todo este tipo es que recibe un componente de manera opcional
   element?: React.ReactNode | null;
 };
 export const HeaderComponent: React.FC<HeaderProps> = ({
-  //todo lo que el componene recibe
   title,
   description,
   element,

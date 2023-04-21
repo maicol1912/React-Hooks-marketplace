@@ -63,16 +63,13 @@ export const HomePage: React.FC<{}> = () => {
           </Button>
         }
       />
-      {/*Si esta cargando en true entonces hacemos un progress cargando */}
       {loading ? (
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
           <CircularProgress />
         </Box>
       ) : (
-        /*si no esta cargando entonces se hace un grid con los caracteres que existen*/
         <>
           <div>
-            {/*si el tamaño es diferente a cero desplegamos un contenedor con la imagen*/}
             {allCharacters!.length !== 0 ? (
               <Grid sx={{ my: 2 }} container spacing={2} direction="row">
                 {allCharacters!.map((character) => (
@@ -88,20 +85,16 @@ export const HomePage: React.FC<{}> = () => {
                 ))}
               </Grid>
             ) : (
-              //si no existen datos entonces colocamos no hay data
               'No data'
             )}
           </div>
-          {/*creamos un box de paginacion para paginar los datos*/}
           <Box
             sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}
           >
             <Pagination
               variant="outlined"
               color="primary"
-              //todo: para saber cuantas paginas hay en el paginador
               count={count}
-              //todo: para modificar la pagina en la que esta
               page={page}
               onChange={handleChange}
               sx={{ mb: 3 }}

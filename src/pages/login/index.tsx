@@ -16,27 +16,22 @@ import { useFormik } from 'formik';
 type loginType = {
   username: string;
   password: string;
-};
-//TODO: la exportacion por defecto se debe hacer para poder renderizar un componente con lazy load  
+};  
 const LoginPage: React.FC<{}> = () => {
   const { getSuccess } = UseNotification();
-  //TODO: creamos una constante de formik, usamos el useFormik y le mandamos el tipo de fields que este debe tener
   const formik = useFormik<loginType>({
     initialValues: {
       username: '',
       password: '',
     },
-    //TODO: le enviamos el tipo validador de YUP / definido en carpeta utils
     validationSchema: LoginValidate,
     onSubmit: (values) => {
-      //TODO: al enviar y pasar todas las validaciones hara el getSuccess
       getSuccess(JSON.stringify(values));
     },
   });
 
 return (
   <Container maxWidth="sm">
-    {/*El sx es usado para marcar los estilos de css dentro del codigo*/}
     <Grid
       container
       direction="column"
@@ -45,13 +40,10 @@ return (
       sx={{ minHeight: '100vh' }}
     >
       <Grid item>
-        {/*El paper es un div parecido al color de fondo pero no es el coloro de BG como tal*/}
         <Paper sx={{ padding: '1.2em', borderRadius: '0.5em' }}>
-          {/*el box permite comportarse de difernete manera de componentes, en este caso se comporta como form*/}
           <Typography sx={{ mt: 1, mb: 1 }} variant="h4">
             Iniciar Sesion
           </Typography>
-          {/*manejamos el sumbit por medio del handleSubmit de formik*/}
           <Box component="form" onSubmit={formik.handleSubmit}>
             <TextField
               name="username"
@@ -78,9 +70,7 @@ return (
               sx={{ mt: 1.5, mb: 1.5 }}
               value={formik.values.password}
               onChange={formik.handleChange}
-              /*si esta tocando el textField con touched vamos a pasar el error*/
               error={formik.touched.password && Boolean(formik.errors.password)}
-              /*si esta tocando el textField con touched vamos a pasar el error*/
               helperText={formik.touched.password && formik.errors.password}
             />
             <Button

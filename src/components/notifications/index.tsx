@@ -8,14 +8,12 @@ type NotificationProp = {
   handleClose: () => void;
 };
 
-//TODO: creamos un componente que debe recibir argumentos como prop definidos en el Types
 export const Notification: React.FC<NotificationProp> = ({
   open,
   message,
   severity,
   handleClose,
 }) => {
-    //TODO: esta retorna una alerta con las caracteristicaz que recibio de las llamadas de otros componentes
   return (
     <Snackbar
       anchorOrigin={{ vertical: 'top', horizontal: 'center' }}

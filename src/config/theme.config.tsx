@@ -1,7 +1,6 @@
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import React from "react";
 
-//TODO estamos agregando tipos al tipo themeprop usado en ThemeConfig
 type ThemeProp = {
     children: JSX.Element
 }
@@ -16,7 +15,6 @@ export enum themePalette {
     BG_SUCESS_MAIN = "rgba(102,187,106,0.1)"
 }
 
-//TODO definicion de estilos en general de materialUI
 const theme = createTheme({
   palette: {
     mode: 'dark',
@@ -30,9 +28,7 @@ const theme = createTheme({
   typography: {
     fontFamily: themePalette.FONT_GLOBAL,
   },
-  //TODO lo usamos para customizar y modificar las caracteristicaz principales de cada componente
   components: {
-    //TODO aca estamos modificando las caracteristicaz del componente de miButton para modificar todo los botones
     MuiButton: {
       defaultProps: {
         style: {
@@ -49,7 +45,6 @@ const theme = createTheme({
           fontSize: '1em',
         },
       },
-      //TODO:estamos sobrescriendo los estilos y accediendo al standarError que es el estilo de cuando hay un error
       styleOverrides: {
         standardError: {
           border: `1px solid ${themePalette.ERROR_MAIN}`,
@@ -64,7 +59,6 @@ const theme = createTheme({
   },
 });
 
-//TODO: FC significa funcion component, significa que devuelve un componente, llaamdnoa  este tipo se pueden usar otras props
 export const ThemeConfig: React.FC<ThemeProp> = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>

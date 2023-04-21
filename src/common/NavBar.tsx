@@ -19,10 +19,8 @@ import { CartComponent } from './Cart';
 export const NavBar: React.FC<{}> = () => {
   const navigate = useNavigate();
 
-  //TODO: obtenemos la lista de items del reducer
   const items = useAppSelector((state)=>state.cartReducer)
 
-  //TODO: tenemos un estado de open para cambiarlo
   const [open,setOpen] = React.useState<boolean>(false)
 
   const handleStateViewDrawer = () => {
@@ -30,7 +28,6 @@ export const NavBar: React.FC<{}> = () => {
   };
 
   return (
-    //TODO sx para llamar los estilos en linea de materialUi
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="sticky">
         <Toolbar>

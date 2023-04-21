@@ -11,9 +11,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  //TODO: El themeConfig es para configurar las ocnfiguraciones de tema de toda nuestra app definidas en el theme.config.tsx
   <React.StrictMode>
-    {/*Aca estamos usando y definiendo el Redux para toda nuestra app*/}
     <Provider store={store}>
       <ThemeConfig>
         <App />
