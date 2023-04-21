@@ -11,6 +11,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { addToCart } from '../../redux/slices/cart.slice';
+import { setItem } from '../../utils/localStorage';
 //TODO: definimos las propiedades que tiene el componnete, las que va a recibir 
 type CardProps = {
     image:string;
@@ -38,6 +39,8 @@ export const CardComponent: React.FC<CardProps>= ({image,name,species,status,id}
     itemExist.some((item) => item.id === id)
       ? setDisableBtn(true)
       : setDisableBtn(false);
+    //TODO: cada que se ejecute el itemExists entonces se guardara ese item en el localstorage
+    setItem('cart',itemExist)
   },/*se ejecutara cada que el itemExist o el id cambie o se cargue*/[itemExist,id])
   const handleAddToCart = ()=>{
     //TODO: enviamos una accion de addToCart y le enviamos la desestructuracion del objeto que llega

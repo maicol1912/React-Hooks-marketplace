@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { getItem } from '../../utils/localStorage';
 
 interface CartAddState {
     id: string | number;
@@ -12,7 +13,7 @@ interface CartRemoveState {
     id: string | number;
 }
 //TODO: definimos el initial state y lo inicializamos como una lista vacia
-const initialState: CartAddState[] = []
+const initialState: CartAddState[] = getItem('cart') || []
 
 //TODO: creamos un slice que es el que maneja los reducers
 export const cartSlice = createSlice({
@@ -31,6 +32,7 @@ export const cartSlice = createSlice({
             //TODO: si el estado es 0 o no existe el id en el item lo agregara a la lista
             if (state.length === 0 || state.filter((item) => item.id === id).length === 0) {
                 state.push(action.payload)
+                
             }
         },
         //TODO: creamos un reducer que se llame removeCart
