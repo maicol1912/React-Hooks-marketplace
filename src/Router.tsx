@@ -1,10 +1,9 @@
 import React from "react";
 import { Routes,Route } from "react-router-dom";
-import { HomePage } from "./pages/home";
-import { LoginPage } from "./pages/login";
-import { RouterLayout } from "./common/RouterLayout";
-import { HeaderComponent } from "./components";
-import { CharacterPage } from "./pages/character";
+import { RouterLayout } from './common/RouterLayout';
+//TODO: lo importamos desde el archivo de index que exporta todas las pages para poder hacer lazylaod
+//TODO: en este caso LoginPage y CharacterPage son lazyLoad
+import { HomePage, LoginPage, CharacterPage } from './pages';
 
 //El react.FC se usa para definir que eso es un componente de react para podr ser usado desde otros lugares
 export const AppRouter:React.FC<{}> = ()=>{

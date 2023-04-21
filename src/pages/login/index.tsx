@@ -17,8 +17,8 @@ type loginType = {
   username: string;
   password: string;
 };
-
-export const LoginPage: React.FC<{}> = () => {
+//TODO: la exportacion por defecto se debe hacer para poder renderizar un componente con lazy load  
+const LoginPage: React.FC<{}> = () => {
   const { getSuccess } = UseNotification();
   //TODO: creamos una constante de formik, usamos el useFormik y le mandamos el tipo de fields que este debe tener
   const formik = useFormik<loginType>({
@@ -101,3 +101,4 @@ return (
   </Container>
 );
 };
+export default LoginPage

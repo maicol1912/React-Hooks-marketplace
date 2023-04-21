@@ -13,8 +13,8 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { characters } from "../../api/characters";
 import { ICharacter } from "./interface/character.interface";
-
-export const CharacterPage:React.FC = ()=>{
+//TODO: la exportacion por defecto se debe hacer para poder renderizar un componente con lazy load  
+const CharacterPage:React.FC = ()=>{
     //TODO: obtenemos el parametro que fue enviado por la ruta con desestructuracion de objetos
     const {id} = useParams()
 
@@ -76,3 +76,5 @@ export const CharacterPage:React.FC = ()=>{
       </Box>
     );
 }
+
+export default CharacterPage
