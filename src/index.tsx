@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeConfig } from './config/theme.config';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,9 +13,12 @@ const root = ReactDOM.createRoot(
 root.render(
   //TODO: El themeConfig es para configurar las ocnfiguraciones de tema de toda nuestra app definidas en el theme.config.tsx
   <React.StrictMode>
-    <ThemeConfig>
-      <App />
-    </ThemeConfig>
+    {/*Aca estamos usando y definiendo el Redux para toda nuestra app*/}
+    <Provider store={store}>
+      <ThemeConfig>
+        <App />
+      </ThemeConfig>
+    </Provider>
   </React.StrictMode>
 );
 

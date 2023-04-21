@@ -5,7 +5,7 @@ import { Box, Grid, Typography, Divider } from '@mui/material';
 type HeaderProps = {
   title: string;
   description: string;
-  //Todo este tipo es que recibe un componente de manera opcional 
+  //Todo este tipo es que recibe un componente de manera opcional
   element?: React.ReactNode | null;
 };
 export const HeaderComponent: React.FC<HeaderProps> = ({
@@ -16,7 +16,7 @@ export const HeaderComponent: React.FC<HeaderProps> = ({
 }) => {
   return (
     <div>
-      <Box sx={{ width: '100%', height: '30%' }}>
+      <Box sx={{ width: '100%', height: '350px' }}>
         <Grid
           container
           direction="row"
@@ -32,13 +32,12 @@ export const HeaderComponent: React.FC<HeaderProps> = ({
               alignItems="center"
               sx={{ height: '100%' }}
             >
-              <Grid item sx={{ml:"4em"}}>
-                <Typography variant="h1" sx={{fontSize:"600%"}}>{title}</Typography>
+              <Grid item>
+                <Typography variant="h1">{title}</Typography>
               </Grid>
               <Grid item sx={{ mt: 2 }}>
                 <Typography>{description}</Typography>
               </Grid>
-              {/*Si el componente llega y es diferente a undefined entonces se muestra, sino no se muestra*/}
               {element !== undefined && (
                 <Grid sx={{ mt: 4, width: '100%' }} item>
                   {element}
